@@ -35,7 +35,6 @@ const todoRoutes = require('./routes/todos')
 
 require('dotenv').config({path: './config/.env'})
 /*
-
 .env file located in the ./config/ directory. Here's what it does step by step:
 
     require('dotenv'): This line imports the dotenv package. dotenv is a commonly used package in Node.js applications to load environment variables from a .env file into the Node.js process environment.
@@ -44,17 +43,29 @@ require('dotenv').config({path: './config/.env'})
 
 */
 
-
 // Passport config
 require('./config/passport')(passport)
+/*
+    require('./config/passport')(passport):
+        This line is using require to import a module located at ./config/passport.
+        The require statement appears to be passing an argument, passport, to the imported module.
+
+
+*/
 
 connectDB()
+/*
+The connectDB() function  mentioned is likely a custom function defined somewhere in Node.js application. It's commonly used to establish a connection to a database
+*/
 
+//
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
+
+
 // Sessions
 app.use(
     session({
